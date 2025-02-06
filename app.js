@@ -1,7 +1,20 @@
 function sortear() {
-    let quantidade = parseInt(document.getElementById('quantidade').value);
-    let de = parseInt(document.getElementById('de').value);
-    let ate = parseInt(document.getElementById('ate').value);
+    let quantidade = Number(document.getElementById('quantidade').value);
+    let de = Number(document.getElementById('de').value);
+    let ate = Number(document.getElementById('ate').value);
+
+    if (de >= ate) {
+        alert ('Ops!! Campo "Do número" deve ser menor do que o campo "Até o número"');
+        return;
+    }
+
+    let pranaodarbug = ate - de + 1;
+    if (pranaodarbug < quantidade) {
+        alert('Intervalo entre os números é menor do que a quantidade informada');
+        return;
+
+        
+    }
 
     let sorteados = [];
     let numero;
